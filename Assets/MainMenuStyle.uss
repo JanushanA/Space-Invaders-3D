@@ -1,0 +1,11 @@
+.button {
+}
+
+.button:hover {
+    scale: 1.1 1.1;
+    background-color: rgba(255, 255, 255, 255);
+    border-left-color: rgba(16, 255, 39, 255);
+    border-right-color: rgba(16, 255, 39, 255);
+    border-top-color: rgba(16, 255, 39, 255);
+    border-bottom-color: rgba(16, 255, 39, 255);
+}

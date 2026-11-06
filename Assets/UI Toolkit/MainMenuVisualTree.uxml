@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=42c9076d6fab5544ea28e0c5648a40e0&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement>
+        <ui:Label tabindex="-1" text="3D SPACE INVADERS" display-tooltip-when-elided="true" name="Header" style="height: auto; -unity-font: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=5fe44c3a08057c343aaba36f42f17bda&amp;type=3#NotInter-Regular&apos;); -unity-font-style: italic; width: 535px; left: 36%; font-size: 50px;" />
+        <ui:Button text="START" display-tooltip-when-elided="true" name="StartGameButton" class="button" style="-unity-font: url(&apos;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#Arial&apos;); font-size: 30px; left: 46%; height: 60px; width: 130px; color: rgba(0, 0, 0, 255); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; transition-duration: 0.5s;" />
+    </ui:VisualElement>
+</ui:UXML>
