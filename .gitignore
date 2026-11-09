@@ -8,6 +8,7 @@
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/
+/[Tt]mp/
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
@@ -107,3 +108,7 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Offline training/test interpreter caches
+__pycache__/
+*.py[cod]
