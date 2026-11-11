@@ -1,0 +1,12 @@
+Proteron Ships, by Viktor Hahn (Unnamed), 2023.
+Source: https://opengameart.org/content/proteron-ships
+License: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+
+Selected original models: Hippocrates, Pythagoras, Watson.
+Original archive: https://opengameart.org/sites/default/files/obj_3.zip
+Archive SHA256: A1D2742B1948A36D718686AABF865340C769CEF4BC8D630E5B57C0B54AFC06A7
+Retrieved 2026-11-15. Original OBJ/MTL and PNG data retained.
+Project adaptations: Unity scale/orientation, HDRP material conversion and
+metallic/roughness packing. Gameplay names: Pathfinder, Vanguard, Aegis.
+No endorsement by the original author is implied.
