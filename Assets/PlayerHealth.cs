@@ -1,39 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
+using Game.Combat;
+using Game.Core;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class PlayerHealth : MonoBehaviour
+// Jake's legacy API backed by the same Health used by HUD/combat/networking.
+[DisallowMultipleComponent]
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    public float health = 50f;
-    public void TakeDamage(float amount)
+    [FormerlySerializedAs("health"), SerializeField] private float initialHealth = 50f;
+    private Health state;
+
+    public float health
     {
-        // Remove the damage of the weapon from health
-
-        health -= amount;
-
-        Debug.Log(health);
-        if (health <= 0f)
+        get
         {
-
-            Die();
-
+            return State.CurrentHealth;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    public bool IsAlive
+    {
+        get
+        {
+            return State.IsAlive;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private Health State
     {
+        get
+        {
+            if (state == null)
+            {
+                state = GetComponent<Health>();
+                if (state == null)
+                {
+                    state = gameObject.AddComponent<Health>();
+                    state.maxHealth = Mathf.Max(1f, initialHealth);
+                    state.ResetHealth();
+                }
+            }
 
+            return state;
+        }
     }
-    void Die()
+
+    private void Awake()
     {
+        state = State;
+    }
 
-        Destroy(gameObject);
+    public void TakeDamage(float amount)
+    {
+        ApplyDamage(new DamageInfo(amount, DamageSource.Script, null, transform.position, Vector3.up));
+    }
 
+    public void ApplyDamage(DamageInfo info)
+    {
+        State.ApplyDamage(info);
     }
 }

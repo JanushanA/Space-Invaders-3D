@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08155d8cf3645c14396c2e038378e5f1, type: 3}
+  m_Name: Weapon_EnemyBasic
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7583337978493180639, guid: f89481891cec3794c8738f343b962d0c, type: 3}
+  projectileSpeed: 20
+  projectileRadius: 0.25
+  projectileLifetime: 5
+  damagePerProjectile: 1
+  shotsPerSecond: 1
+  projectilesPerShot: 1
+  spreadAngle: 0
