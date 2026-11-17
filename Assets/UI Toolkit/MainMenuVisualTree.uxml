@@ -1,7 +1,60 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:uie="UnityEditor.UIElements"
+    xsi="http://www.w3.org/2001/XMLSchema-instance"
+    engine="UnityEngine.UIElements"
+    editor="UnityEditor.UIElements"
+    noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
+    editor-extension-mode="False">
     <Style src="project://database/Assets/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=42c9076d6fab5544ea28e0c5648a40e0&amp;type=3#MainMenuStyle" />
-    <ui:VisualElement>
-        <ui:Label tabindex="-1" text="3D SPACE INVADERS" display-tooltip-when-elided="true" name="Header" style="height: auto; -unity-font: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=5fe44c3a08057c343aaba36f42f17bda&amp;type=3#NotInter-Regular&apos;); -unity-font-style: italic; width: 535px; left: 36%; font-size: 50px;" />
-        <ui:Button text="START" display-tooltip-when-elided="true" name="StartGameButton" class="button" style="-unity-font: url(&apos;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#Arial&apos;); font-size: 30px; left: 46%; height: 60px; width: 130px; color: rgba(0, 0, 0, 255); border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; transition-duration: 0.5s;" />
+
+    <!-- MainMenuEvents selects which named panel is visible and binds controls by name. -->
+    <ui:VisualElement name="MenuShell" class="menu-shell">
+        <ui:Label text="3D SPACE INVADERS" name="Header" class="header" />
+
+        <ui:VisualElement name="HomePanel" class="panel">
+            <ui:Button text="START" name="StartGameButton" class="button" />
+            <ui:Button text="MULTIPLAYER" name="MultiplayerButton" class="button" />
+            <ui:Button text="SETTINGS" name="SettingsButton" class="button" />
+            <ui:Button text="QUIT" name="QuitButton" class="button" />
+        </ui:VisualElement>
+
+        <!-- Sector buttons are populated at runtime from campaign progress. -->
+        <ui:VisualElement name="SectorPanel" class="panel">
+            <ui:Label text="SELECT A SECTOR" class="panel-title" />
+            <ui:VisualElement name="SectorList" class="sector-list" />
+            <ui:Button text="BACK" name="BackButton" class="button" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="SettingsPanel" class="panel">
+            <ui:Label text="FLIGHT SETTINGS" class="panel-title" />
+            <ui:Toggle text="Invert vertical look" name="InvertLook" />
+            <ui:Label text="WASD: fly / Mouse: aim / Left click: fire
+Space / Ctrl: elevation / Tab: skills / Esc: release cursor" class="instructions" />
+            <ui:Button text="BACK" name="SettingsBackButton" class="button" />
+        </ui:VisualElement>
+
+        <!-- Join controls report connection status before the lobby panel takes over. -->
+        <ui:VisualElement name="MultiPanel" class="panel">
+            <ui:Label text="SQUAD FLIGHT / UP TO FIVE PILOTS" class="panel-title" />
+            <ui:Button text="CREATE LOBBY" name="CreateLobbyButton" class="button" />
+            <ui:TextField label="Join code" name="JoinCode" max-length="6" />
+            <ui:Button text="JOIN LOBBY" name="JoinLobbyButton" class="button" />
+            <ui:Label name="JoinStatus" />
+            <ui:Label text="Internet play requires the group's Unity Services Relay setup.
+When Relay is unavailable, LAN works only on the same network." class="instructions" />
+            <ui:Button text="BACK" name="MultiBackButton" class="button" />
+        </ui:VisualElement>
+
+        <!-- Lobby labels and sector choices refresh from the shared network session. -->
+        <ui:VisualElement name="LobbyPanel" class="panel">
+            <ui:Label name="LobbyCode" class="panel-title" />
+            <ui:Label name="LobbyStatus" />
+            <ui:Label name="Roster" />
+            <ui:VisualElement name="LobbySectors" class="sector-list" />
+            <ui:Label name="HostHint" />
+            <ui:Button text="LAUNCH SQUAD" name="HostStartButton" class="button" />
+            <ui:Button text="LEAVE LOBBY" name="LeaveLobbyButton" class="button" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

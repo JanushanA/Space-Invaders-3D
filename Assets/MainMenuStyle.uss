@@ -1,11 +1,166 @@
-.button {
+/* Shared reference palette and supplied Roboto. All menus inherit these rules. */
+.menu-shell {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(3, 17, 25, 0.96);
+    color: rgb(245, 250, 252);
+    -unity-font: url("Resources/UI/Fonts/Roboto-Bold.ttf");
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.button:hover {
-    scale: 1.1 1.1;
-    background-color: rgba(255, 255, 255, 255);
-    border-left-color: rgba(16, 255, 39, 255);
-    border-right-color: rgba(16, 255, 39, 255);
-    border-top-color: rgba(16, 255, 39, 255);
-    border-bottom-color: rgba(16, 255, 39, 255);
+/* Shared heading hierarchy for the home screen and its panels. */
+.header {
+    font-size: 42px;
+    -unity-font-style: bold;
+    color: rgb(245, 250, 252);
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: rgb(76, 234, 242);
+    margin-bottom: 24px;
+    letter-spacing: 3px;
+}
+
+/* Centered panels share one border treatment and responsive width limit. */
+.panel {
+    width: 760px;
+    max-width: 95%;
+    align-items: center;
+    padding: 24px;
+    background-color: rgb(7, 29, 40);
+    border-top-width: 2px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: rgb(76, 234, 242);
+    border-bottom-color: rgb(103, 127, 140);
+    border-left-color: rgb(103, 127, 140);
+    border-right-color: rgb(103, 127, 140);
+}
+
+.panel-title {
+    font-size: 21px;
+    -unity-font-style: bold;
+    margin-bottom: 16px;
+    color: rgb(255, 181, 71);
+}
+
+/* Button geometry stays consistent across navigation and lobby actions. */
+.button {
+    height: 48px;
+    min-height: 40px;
+    width: 320px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: rgb(245, 250, 252);
+    background-color: rgb(12, 43, 55);
+    border-top-left-radius: 0;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 0;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 3px;
+    border-right-width: 1px;
+    border-top-color: rgb(103, 127, 140);
+    border-bottom-color: rgb(103, 127, 140);
+    border-left-color: rgb(76, 234, 242);
+    border-right-color: rgb(103, 127, 140);
+}
+
+/* Mouse hover and keyboard focus use the same visible highlight. */
+.button:hover, .button:focus {
+    color: rgb(76, 234, 242);
+    background-color: rgb(18, 57, 68);
+    border-top-color: rgb(76, 234, 242);
+    border-bottom-color: rgb(76, 234, 242);
+    border-left-color: rgb(76, 234, 242);
+    border-right-color: rgb(76, 234, 242);
+}
+
+.button:active {
+    color: rgb(3, 17, 25);
+    background-color: rgb(76, 234, 242);
+}
+
+.button:disabled {
+    opacity: 0.45;
+    color: rgb(165, 189, 200);
+}
+
+#StoryModeButton {
+    color: rgb(255, 181, 71);
+    border-left-color: rgb(255, 181, 71);
+}
+
+/* Sector buttons wrap into rows within the shared panel width. */
+.sector-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sector-button {
+    width: 320px;
+    font-size: 13px;
+    height: 42px;
+}
+
+.instructions {
+    white-space: normal;
+    font-size: 15px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    -unity-text-align: middle-center;
+    color: rgb(165, 189, 200);
+}
+
+#JoinCode {
+    width: 320px;
+    font-size: 20px;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    color: rgb(245, 250, 252);
+}
+
+/* Style the built-in input and toggle children as well as their outer controls. */
+.unity-text-field__input {
+    background-color: rgb(3, 17, 25);
+    color: rgb(245, 250, 252);
+    border-bottom-color: rgb(76, 234, 242);
+    border-bottom-width: 2px;
+    padding: 6px;
+}
+
+.unity-toggle {
+    font-size: 18px;
+    color: rgb(245, 250, 252);
+    margin: 12px;
+}
+
+.unity-toggle__checkmark {
+    background-color: rgb(12, 43, 55);
+    border-top-color: rgb(76, 234, 242);
+    border-bottom-color: rgb(76, 234, 242);
+    border-left-color: rgb(76, 234, 242);
+    border-right-color: rgb(76, 234, 242);
+}
+
+#Roster {
+    font-size: 17px;
+    color: rgb(245, 250, 252);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#LobbyStatus, #JoinStatus, #HostHint {
+    color: rgb(86, 232, 216);
+    margin-top: 7px;
+    white-space: normal;
 }
